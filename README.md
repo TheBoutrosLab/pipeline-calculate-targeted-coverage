@@ -1,6 +1,6 @@
 # Calculate Targeted Coverage
 
-[![GitHub release](https://img.shields.io/github/v/release/uclahs-cds/pipeline-calculate-targeted-coverage)](https://github.com/uclahs-cds/pipeline-calculate-targeted-coverage/actions/workflows/prepare-release.yaml)
+[![GitHub release](https://img.shields.io/github/v/release/theboutroslab/pipeline-calculate-targeted-coverage)](https://github.com/theboutroslab/pipeline-calculate-targeted-coverage/actions/workflows/prepare-release.yaml)
 
 - [Calculate Targeted Coverage](#calculate-targeted-coverage)
   - [Overview](#overview)
@@ -22,7 +22,7 @@
   - [Contributors](#contributors)
   - [License](#license)
 ## Overview
-This pipeline extracts read depth calculations from a BAM file and generates outputs that are useful to the interpretation and downstream variant calling of a targeted sequencing experiment. Relevant datasets include targeted gene panels and whole exome sequencing (WXS) experiments. For in-depth downstream coverage QC, the pipeline can output per-base read depth at all targeted loci specified by a target BED file and read depth at genome-wide "off-target" well characterized polymorphic sites known to dbSNP. For a more general overview of targeted sequencing quality, the pipeline can output QC metrics produced by `picard CollectHsMetrics`. As a direct contribution to a DNA processing workflow, the pipeline can output a coordinate BED file containing target intervals merged with intervals encompassing off-target dbSNP sites enriched in coverage (as determined by a user-defined read-depth threshold). This new coordinate file can be used to indicate base quality recalibration and variant calling intervals to [`pipeline-recalibrate-BAM`](https://github.com/uclahs-cds/pipeline-recalibrate-BAM/blob/34e0e8ccc46eb406087baec1bb858fa9c2f4c4ad/config/template.config#L37) and `gatk HaplotypeCaller`in [`pipeline-call-gSNP`](https://github.com/uclahs-cds/pipeline-call-gSNP/blob/43bf6bd2ccf2abce61701ac1d52105d408e934a4/config/template.config#L28) directly or through `metapipeline-DNA`.
+This pipeline extracts read depth calculations from a BAM file and generates outputs that are useful to the interpretation and downstream variant calling of a targeted sequencing experiment. Relevant datasets include targeted gene panels and whole exome sequencing (WXS) experiments. For in-depth downstream coverage QC, the pipeline can output per-base read depth at all targeted loci specified by a target BED file and read depth at genome-wide "off-target" well characterized polymorphic sites known to dbSNP. For a more general overview of targeted sequencing quality, the pipeline can output QC metrics produced by `picard CollectHsMetrics`. As a direct contribution to a DNA processing workflow, the pipeline can output a coordinate BED file containing target intervals merged with intervals encompassing off-target dbSNP sites enriched in coverage (as determined by a user-defined read-depth threshold). This new coordinate file can be used to indicate base quality recalibration and variant calling intervals to [`pipeline-recalibrate-BAM`](https://github.com/theboutroslab/pipeline-recalibrate-BAM/blob/34e0e8ccc46eb406087baec1bb858fa9c2f4c4ad/config/template.config#L37) and `gatk HaplotypeCaller`in [`pipeline-call-gSNP`](https://github.com/theboutroslab/pipeline-call-gSNP/blob/43bf6bd2ccf2abce61701ac1d52105d408e934a4/config/template.config#L28) directly or through `metapipeline-DNA`.
 
 calculates per-base read depth in a BAM file at "target" intervals specified by a target BED file and at "off-target" well characterized polymorphic loci 
 This pipeline performs coverage calculations from a BAM file at intervals specified by a target bed file and reports some basic coverage metrics. The SAMtools depth tool is used to calculate per-base coverage in specified regions. This intermediate output is converted into bed format using an awk script. Then the BEDtools merge tool is used to collapse consecutive coordinates into intervals, with a final output reporting a comma-separated list of per-base read depths for each coordinate in an interval. Picard's CollectHsMetrics is used to report various interval related metrics on the input BAM.
@@ -35,7 +35,7 @@ This pipeline performs coverage calculations from a BAM file at intervals specif
 
 2. Update the input yaml
 
-3. See the submission script, [here](https://github.com/uclahs-cds/tool-submit-nf), to submit your pipeline
+3. See the submission script, [here](https://github.com/theboutroslab/tool-submit-nf), to submit your pipeline
 
 ### Requirements
 Currently supported Nextflow versions: `v23.04.2`
@@ -90,7 +90,7 @@ A directed acyclic graph of your pipeline.
 | `target_BED` | yes | path | BED file specifying target intervals (defines regions for target and off-target coverage operations). |
 | `save_intermediate_files` | yes | boolean | Whether to save intermediate files. |
 | `reference_dict` | yes | path | Human genome reference dictionary file for use in BED to INTERVAL_LIST conversion. Required if collecting metrics.|
-| `reference_dbSNP` | yes | path | dbSNP reference VCF file, with proper chromosome encoding and compression. See [discussion](https://github.com/uclahs-cds/pipeline-targeted-coverage/discussions/18#:~:text=Troubleshooting%20dbSNP%20reference%20file). Required if performing off-target read depth calculation. |
+| `reference_dbSNP` | yes | path | dbSNP reference VCF file, with proper chromosome encoding and compression. See [discussion](https://github.com/theboutroslab/pipeline-targeted-coverage/discussions/18#:~:text=Troubleshooting%20dbSNP%20reference%20file). Required if performing off-target read depth calculation. |
 | `genome_sizes` | yes | path | Reference file consisting of chromosomes and their lengths used by `bedtools slop`. Required for off-target read depth workflows. `.fai` files accepted. |
 | `target_depth` | no | bool | Whether to calculate per-base read depth in targeted regions. Default false.|
 | `off_target_depth` | no | bool | Whether to perform off-target read depth calculation at dbSNP loci. Default true.|
@@ -159,15 +159,15 @@ General estimates, with wide variations, are that whole exome experiments requir
 
 ## Discussions
 
-- [Issue tracker](https://github.com/uclahs-cds/pipeline-targeted-coverage/issues) to report errors and enhancement ideas.
-- Discussions can take place in [pipeline-calculate-targeted-coverage Discussions](https://github.com/uclahs-cds/pipeline-targeted-coverage/discussions)
-- [pipeline-calculate-targeted-coverage pull requests](https://github.com/uclahs-cds/pipeline-targeted-coverage/pulls) are also open for discussion.
+- [Issue tracker](https://github.com/theboutroslab/pipeline-targeted-coverage/issues) to report errors and enhancement ideas.
+- Discussions can take place in [pipeline-calculate-targeted-coverage Discussions](https://github.com/theboutroslab/pipeline-targeted-coverage/discussions)
+- [pipeline-calculate-targeted-coverage pull requests](https://github.com/theboutroslab/pipeline-targeted-coverage/pulls) are also open for discussion.
 
 ---
 
 ## Contributors
 
-Please see list of [Contributors](https://github.com/uclahs-cds/pipeline-targeted-coverage/graphs/contributors) at GitHub.
+Please see list of [Contributors](https://github.com/theboutroslab/pipeline-targeted-coverage/graphs/contributors) at GitHub.
 
 ---
 
