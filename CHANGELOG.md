@@ -1,18 +1,19 @@
 # Changelog
+
 All notable changes to the calculate-targeted-coverage pipeline.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
----
-
-## [Unreleased]
+## [2.0.0] - 2026-04-23
 
 ### Added
+
 - Add containerization profiles
 
 ### Changed
+
 - Update Nextflow configuration test workflows
 - Update README Performance Validation and References section
 - Remove unused docker image for bedr
@@ -23,16 +24,16 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Update SAMtools to `v1.23`
 - Update BEDtools to `v2.31.1`
 
----
+## [1.1.0] - 2024-03-28
 
-## [v1.1.0] - 2024-03-28
 ### Added
+
 - Compressed output for the expanded set of target intervals
 
----
+## [1.0.0] - 2024-03-27
 
-## [v1.0.0] - 2024-03-27
 ### Added
+
 - Add workflow to generate SVG images from embedded PlantUML source
 - Add workflow to build and deploy documentation to GitHub Pages
 - Add workflow to run Nextflow configuration regression tests
@@ -42,20 +43,21 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add parameter validation schema
 
 ### Changed
+
 - Update CI/CD workflow to use current image
 - Update samtools depth default output options
 - Update filenames to standardized format
 
----
+## [1.0.0-rc.2] - 2024-02-14
 
-## [v1.0.0-rc.2] - 2024-02-14
 ### Changed
+
 - Update pipeline name to match Boutros Lab standards
 
----
+## [1.0.0-rc.1] - 2024-01-09
 
-## [v1.0.0-rc.1] - 2024-01-09
 ### Added
+
 - Add `get_depth_samtools.nf` module
 - Add `merge_intervals_bedtools.nf` module
 - Add `depth_to_bed.nf` module
@@ -75,15 +77,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Add pipeline release github workflow
 
 ### Changed
+
 - Update manifest
 - Update `metadata.yaml`
 - Update output directory structure according to lab standards
 - Update workflow to accept external bait file.
-- Update docker container registry to ghcr.io/uclahs-cds
+- Update docker container registry to <http://ghcr.io/uclahs-cds>
 - Add coverage cap parameter to `CollectHsMetrics` command
 - Add default parameter definitions for coverage cap and external bait file
 - Update template.config for target bed +/- bait bed, bait interval list, or target interval list
 - Update default parameters.
 - Update `methods.config` to match current template and use external module.
----
 
+[1.0.0]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v1.0.0-rc.2...v1.0.0
+[1.0.0-rc.1]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/releases/tag/v1.0.0-rc.1
+[1.0.0-rc.2]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v1.0.0-rc.1...v1.0.0-rc.2
+[1.1.0]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v1.0.0...v1.1.0
+[2.0.0]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v1.1.0...v2.0.0
