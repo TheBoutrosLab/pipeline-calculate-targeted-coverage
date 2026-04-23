@@ -50,19 +50,57 @@
     "params": {
       "bait_bed": "",
       "bait_interval_list": "",
-      "bedtools_version": "2.29.2",
+      "base_allocations": {
+        "convert_depth_to_bed": {
+          "cpus": "1",
+          "memory": "1 GB"
+        },
+        "merge_bedfiles_BEDtools": {
+          "cpus": "1",
+          "memory": "1 GB"
+        },
+        "run_BedToIntervalList_picard": {
+          "cpus": "1",
+          "memory": "3 GB"
+        },
+        "run_CollectHsMetrics_picard": {
+          "cpus": "1",
+          "memory": "25 GB"
+        },
+        "run_depth_SAMtools": {
+          "cpus": "1",
+          "memory": "1 GB"
+        },
+        "run_depth_filter": {
+          "cpus": "1",
+          "memory": "1 GB"
+        },
+        "run_intersect_BEDtools": {
+          "cpus": "1",
+          "memory": "1 GB"
+        },
+        "run_merge_BEDtools": {
+          "cpus": "1",
+          "memory": "1 GB"
+        },
+        "run_slop_BEDtools": {
+          "cpus": "1",
+          "memory": "1 GB"
+        }
+      },
+      "bedtools_version": "2.31.1",
       "blcds_registered_dataset": false,
       "collect_metrics": true,
       "container_mount_flag": "-v",
       "coverage_cap": "3000",
       "dataset_id": "TWGSAMIN000001",
-      "dataset_registry_prefix": "/hot/data",
       "date": "19970704T165655Z",
       "dbSNP_slop": "150",
-      "docker_container_registry": "ghcr.io/uclahs-cds",
-      "docker_image_bedtools": "ghcr.io/uclahs-cds/bedtools:2.29.2",
-      "docker_image_picard": "ghcr.io/uclahs-cds/picard:3.0.0",
-      "docker_image_samtools": "ghcr.io/uclahs-cds/samtools:1.16.1",
+      "docker_container_registry_theboutroslab": "ghcr.io/theboutroslab",
+      "docker_container_registry_uclahscds": "ghcr.io/uclahs-cds",
+      "docker_image_bedtools": "ghcr.io/theboutroslab/bedtools:2.31.1",
+      "docker_image_picard": "ghcr.io/theboutroslab/picard:3.4.0",
+      "docker_image_samtools": "ghcr.io/theboutroslab/samtools:1.23",
       "docker_image_validate": "ghcr.io/uclahs-cds/pipeval:4.0.0-rc.2",
       "gatk_command_mem_diff": "2 GB",
       "genome_sizes": "/hot/resource/reference-genome/GRCh38-BI-20160721/Homo_sapiens_assembly38.fasta.fai",
@@ -72,28 +110,28 @@
       "log_output_dir": "/tmp/nf-config-test-outputs/calculate-targeted-coverage-VER.SI.ON/TWGSAMIN000001-T002-S02-F/log-calculate-targeted-coverage-VER.SI.ON-19970704T165655Z",
       "max_cpus": "16",
       "max_memory": "31 GB",
+      "max_time": "24d 20h 31m 24s",
       "merge_operation": "collapse",
       "min_base_quality": "20",
       "min_cpus": "1",
       "min_mapping_quality": "20",
       "min_memory": "1 MB",
       "min_read_depth": "30",
+      "min_time": "1s",
       "near_distance": "250",
       "off_target_depth": true,
       "off_target_slop": "500",
       "output_dir": "/tmp/nf-config-test-outputs",
       "output_dir_base": "/tmp/nf-config-test-outputs/calculate-targeted-coverage-VER.SI.ON/TWGSAMIN000001-T002-S02-F",
       "output_enriched_target_file": true,
-      "patient": "null",
       "picard_CollectHsMetrics_extra_args": "",
-      "picard_version": "3.0.0",
+      "picard_version": "3.4.0",
       "pipeval_version": "4.0.0-rc.2",
       "reference_dbSNP": "/hot/resource/database/dbSNP-155/thinned/GRCh38/dbSNP-155_thinned_hg38.vcf.gz",
       "reference_dict": "/hot/resource/reference-genome/GRCh38-BI-20160721/Homo_sapiens_assembly38.dict",
-      "sample": "null",
       "sample_id": "TWGSAMIN000001-T002-S02-F",
       "samtools_depth_extra_args": "",
-      "samtools_version": "1.16.1",
+      "samtools_version": "1.23",
       "save_all_dbSNP": false,
       "save_intermediate_files": false,
       "save_interval_list": false,
@@ -103,7 +141,7 @@
       "target_interval_list": "",
       "ucla_cds": true,
       "work_dir": "/scratch/4674821",
-      "workflow_output_dir": "/tmp/nf-config-test-outputs/calculate-targeted-coverage-VER.SI.ON/TWGSAMIN000001-T002-S02-F/SAMtools-1.16.1"
+      "workflow_output_dir": "/tmp/nf-config-test-outputs/calculate-targeted-coverage-VER.SI.ON/TWGSAMIN000001-T002-S02-F/SAMtools-1.23"
     },
     "process": {
       "cache": true,
@@ -211,6 +249,12 @@
     "report": {
       "enabled": true,
       "file": "/tmp/nf-config-test-outputs/calculate-targeted-coverage-VER.SI.ON/TWGSAMIN000001-T002-S02-F/log-calculate-targeted-coverage-VER.SI.ON-19970704T165655Z/nextflow-log/report.html"
+    },
+    "resource_handler": {
+      "handle_resources": "closure()",
+      "set_resource_limit_params": "closure()",
+      "set_retry": "closure()",
+      "setup_retry": "closure()"
     },
     "timeline": {
       "enabled": true,

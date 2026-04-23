@@ -1,0 +1,662 @@
+{
+    "f2": {
+        "run_depth_SAMtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.5,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.26,
+                "max": "1 GB"
+            }
+        },
+        "run_BedToIntervalList_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.5,
+                "max": 1
+            },
+            "memory": {
+                "min": "3 GB",
+                "fraction": 0.79,
+                "max": "3 GB"
+            }
+        },
+        "run_CollectHsMetrics_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.5,
+                "max": 1
+            },
+            "memory": {
+                "min": "3 GB",
+                "fraction": 0.79,
+                "max": "3 GB"
+            }
+        },
+        "convert_depth_to_bed": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.5,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.26,
+                "max": "1 GB"
+            }
+        },
+        "run_depth_filter": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.5,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.26,
+                "max": "1 GB"
+            }
+        },
+        "run_slop_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.5,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.26,
+                "max": "1 GB"
+            }
+        },
+        "run_intersect_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.5,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.26,
+                "max": "1 GB"
+            }
+        },
+        "merge_bedfiles_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.5,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.26,
+                "max": "1 GB"
+            }
+        },
+        "run_merge_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.5,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.26,
+                "max": "1 GB"
+            }
+        }
+    },
+    "f16": {
+        "run_depth_SAMtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.06,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.03,
+                "max": "1 GB"
+            }
+        },
+        "run_BedToIntervalList_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.06,
+                "max": 1
+            },
+            "memory": {
+                "min": "3 GB",
+                "fraction": 0.10,
+                "max": "3 GB"
+            }
+        },
+        "run_CollectHsMetrics_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.06,
+                "max": 1
+            },
+            "memory": {
+                "min": "25 GB",
+                "fraction": 0.82,
+                "max": "25 GB"
+            }
+        },
+        "convert_depth_to_bed": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.06,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.03,
+                "max": "1 GB"
+            }
+        },
+        "run_depth_filter": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.06,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.03,
+                "max": "1 GB"
+            }
+        },
+        "run_slop_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.06,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.03,
+                "max": "1 GB"
+            }
+        },
+        "run_intersect_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.06,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.03,
+                "max": "1 GB"
+            }
+        },
+        "merge_bedfiles_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.06,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.03,
+                "max": "1 GB"
+            }
+        },
+        "run_merge_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.06,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.03,
+                "max": "1 GB"
+            }
+        }
+    },
+    "f32": {
+        "run_depth_SAMtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.03,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.02,
+                "max": "1 GB"
+            }
+        },
+        "run_BedToIntervalList_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.03,
+                "max": 1
+            },
+            "memory": {
+                "min": "3 GB",
+                "fraction": 0.05,
+                "max": "3 GB"
+            }
+        },
+        "run_CollectHsMetrics_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.03,
+                "max": 1
+            },
+            "memory": {
+                "min": "50 GB",
+                "fraction": 0.82,
+                "max": "50 GB"
+            }
+        },
+        "convert_depth_to_bed": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.03,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.02,
+                "max": "1 GB"
+            }
+        },
+        "run_depth_filter": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.03,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.02,
+                "max": "1 GB"
+            }
+        },
+        "run_slop_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.03,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.02,
+                "max": "1 GB"
+            }
+        },
+        "run_intersect_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.03,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.02,
+                "max": "1 GB"
+            }
+        },
+        "merge_bedfiles_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.03,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.02,
+                "max": "1 GB"
+            }
+        },
+        "run_merge_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.03,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.02,
+                "max": "1 GB"
+            }
+        }
+    },
+    "f72": {
+        "run_depth_SAMtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "1 GB"
+            }
+        },
+        "run_BedToIntervalList_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "3 GB",
+                "fraction": 0.02,
+                "max": "3 GB"
+            }
+        },
+        "run_CollectHsMetrics_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "100 GB",
+                "fraction": 0.73,
+                "max": "100 GB"
+            }
+        },
+        "convert_depth_to_bed": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "1 GB"
+            }
+        },
+        "run_depth_filter": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "1 GB"
+            }
+        },
+        "run_slop_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "1 GB"
+            }
+        },
+        "run_intersect_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "1 GB"
+            }
+        },
+        "merge_bedfiles_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "1 GB"
+            }
+        },
+        "run_merge_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "1 GB"
+            }
+        }
+    },
+    "m64": {
+        "run_depth_SAMtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.02,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.00,
+                "max": "1 GB"
+            }
+        },
+        "run_BedToIntervalList_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.02,
+                "max": 1
+            },
+            "memory": {
+                "min": "3 GB",
+                "fraction": 0.00,
+                "max": "3 GB"
+            }
+        },
+        "run_CollectHsMetrics_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.02,
+                "max": 1
+            },
+            "memory": {
+                "min": "100 GB",
+                "fraction": 0.10,
+                "max": "100 GB"
+            }
+        },
+        "convert_depth_to_bed": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.02,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.00,
+                "max": "1 GB"
+            }
+        },
+        "run_depth_filter": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.02,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.00,
+                "max": "1 GB"
+            }
+        },
+        "run_slop_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.02,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.00,
+                "max": "1 GB"
+            }
+        },
+        "run_intersect_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.02,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.00,
+                "max": "1 GB"
+            }
+        },
+        "merge_bedfiles_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.02,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.00,
+                "max": "1 GB"
+            }
+        },
+        "run_merge_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.02,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.00,
+                "max": "1 GB"
+            }
+        }
+    },
+    "default": {
+        "run_depth_SAMtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "8 GB"
+            }
+        },
+        "run_BedToIntervalList_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "3 GB",
+                "fraction": 0.02,
+                "max": "16 GB"
+            }
+        },
+        "run_CollectHsMetrics_picard": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "3 GB",
+                "fraction": 0.73,
+                "max": "100 GB"
+            }
+        },
+        "convert_depth_to_bed": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "8 GB"
+            }
+        },
+        "run_depth_filter": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "8 GB"
+            }
+        },
+        "run_slop_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "8 GB"
+            }
+        },
+        "run_intersect_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "8 GB"
+            }
+        },
+        "merge_bedfiles_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "8 GB"
+            }
+        },
+        "run_merge_BEDtools": {
+            "cpus": {
+                "min": 1,
+                "fraction": 0.01,
+                "max": 1
+            },
+            "memory": {
+                "min": "1 GB",
+                "fraction": 0.01,
+                "max": "8 GB"
+            }
+        }
+    }
+}
