@@ -19,6 +19,9 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Update metadata description to match repo description
 - Update documentation of utility script for joining per-sample outputs
 - Use `TheBoutrosLab` submodules
+- Update Picard to `v3.4.0`
+- Update SAMtools to `v1.23`
+- Update BEDtools to `v2.31.1`
 
 ---
 
