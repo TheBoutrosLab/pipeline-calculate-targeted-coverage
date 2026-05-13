@@ -2,7 +2,6 @@
 
 nextflow.enable.dsl=2
 
-// Include processes and workflows here  // './module/validation'
 include { run_validate_PipeVal } from './external/pipeline-Nextflow-module/modules/PipeVal/validate/main'
 include { run_depth_SAMtools as run_depth_SAMtools_target; run_depth_SAMtools as run_depth_SAMtools_off_target} from './module/get_depth_samtools'
 include { convert_depth_to_bed as convert_depth_to_bed_off_target } from './module/depth_to_bed'
@@ -16,25 +15,14 @@ include { run_intersect_BEDtools } from './module/filter_off_target_depth.nf'
 include { run_depth_filter } from './module/filter_off_target_depth.nf'
 include { merge_bedfiles_BEDtools } from './module/merge_bedfiles_bedtools.nf'
 
-include { generate_checksum_PipeVal as generate_sha512sum } from './external/pipeline-Nextflow-module/modules/PipeVal/generate-checksum/main.nf' addParams(
-    options: [
-        output_dir: "${params.workflow_output_dir}/output/",
-        log_output_dir: "${params.log_output_dir}/process-log/",
-        docker_image_version: params.pipeval_version,
-        main_process: "./",
-        checksum_alg: "sha512"
-    ])
-include { compress_index_VCF as compress_index_BED } from './external/pipeline-Nextflow-module/modules/common/index_VCF_tabix/main.nf' addParams(
-    options: [
-        output_dir: "${params.workflow_output_dir}/",
-        log_output_dir: "${params.log_output_dir}/process-log/"
-    ])
+include { generate_checksum_PipeVal as generate_sha512sum } from './external/pipeline-Nextflow-module/modules/PipeVal/generate-checksum/main.nf'
+include { compress_index_VCF as compress_index_BED } from './external/pipeline-Nextflow-module/modules/common/index_VCF_tabix/main.nf'
 
 // Log info here
 log.info """\
-        ======================================
+        =====================================================
         C A L C U L A T E - T A R G E T E D - C O V E R A G E
-        ======================================
+        =====================================================
         Boutros Lab
 
         Current Configuration:
@@ -80,18 +68,44 @@ log.info """\
         """
         .stripIndent()
 
-// Channels here
-// Decription of input channel
 
-// Main workflow here
 workflow {
     Channel
         .from( params.input.bam )
-            .set { input_ch_bam }
+        .set { input_ch_bam }
+
+    meta_base = Channel.value([
+        "output_dir_base": params.workflow_output_dir,
+        "log_output_dir": params.log_output_dir
+    ])
+
+    validate_meta = meta_base.map{ base_m ->
+        base_m + [
+            "docker_image": params.docker_image_validate
+        ]
+    }
+
+    checksum_meta = meta_base.map{ base_m ->
+        base_m + [
+            "output_dir": "${base_m.output_dir_base}/output",
+            "checksum_alg": "sha512",
+            "docker_image": params.docker_image_validate
+        ]
+    }
+
+    compress_index_meta = meta_base.map{ base_m ->
+        base_m + [
+            "output_dir": base_m.output_dir_base,
+            "log_output_dir": "${base_m.log_output_dir}/process-log",
+            "id": params.sample_id,
+            "save_intermediate_files": params.save_intermediate_files,
+            "docker_image": params.docker_image_samtools
+        ]
+    }
 
     // Validation process
     run_validate_PipeVal(
-        input_ch_bam
+        validate_meta.combine(input_ch_bam)
         )
 
     run_validate_PipeVal.out.validation_result.collectFile(
@@ -220,8 +234,7 @@ workflow {
                     )
 
                 compress_index_BED(
-                    merge_bedfiles_BEDtools.out.bed
-                        .map{ it -> [params.sample_id, it] }
+                    compress_index_meta.combine(merge_bedfiles_BEDtools.out.bed)
                 )
 
                 checksum_ch = checksum_ch.mix(compress_index_BED.out.index_out.map{ it -> [it[1], it[2]]})
@@ -231,6 +244,5 @@ workflow {
 
             }
         
-        generate_sha512sum(checksum_ch)
-        
+        generate_sha512sum(checksum_meta.combine(checksum_ch.flatten()))
     }

@@ -101,7 +101,7 @@
       "docker_image_bedtools": "ghcr.io/theboutroslab/bedtools:2.31.1",
       "docker_image_picard": "ghcr.io/theboutroslab/picard:3.4.0",
       "docker_image_samtools": "ghcr.io/theboutroslab/samtools:1.23",
-      "docker_image_validate": "ghcr.io/uclahs-cds/pipeval:4.0.0-rc.2",
+      "docker_image_validate": "ghcr.io/uclahs-cds/pipeval:5.2.0",
       "gatk_command_mem_diff": "2 GB",
       "genome_sizes": "/hot/resource/reference-genome/GRCh38-BI-20160721/Homo_sapiens_assembly38.fasta.fai",
       "input": {
@@ -126,7 +126,7 @@
       "output_enriched_target_file": true,
       "picard_CollectHsMetrics_extra_args": "",
       "picard_version": "3.4.0",
-      "pipeval_version": "4.0.0-rc.2",
+      "pipeval_version": "5.2.0",
       "reference_dbSNP": "/hot/resource/database/dbSNP-155/thinned/GRCh38/dbSNP-155_thinned_hg38.vcf.gz",
       "reference_dict": "/hot/resource/reference-genome/GRCh38-BI-20160721/Homo_sapiens_assembly38.dict",
       "sample_id": "TWGSAMIN000001-T002-S02-F",
