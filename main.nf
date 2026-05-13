@@ -96,6 +96,7 @@ workflow {
     compress_index_meta = meta_base.map{ base_m ->
         base_m + [
             "output_dir": base_m.output_dir_base,
+            "log_output_dir": "${base_m.log_output_dir}/process-log",
             "id": params.sample_id,
             "save_intermediate_files": params.save_intermediate_files,
             "docker_image": params.docker_image_samtools
