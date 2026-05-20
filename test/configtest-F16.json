@@ -144,6 +144,12 @@
       "workflow_output_dir": "/tmp/nf-config-test-outputs/calculate-targeted-coverage-VER.SI.ON/TWGSAMIN000001-T002-S02-F/SAMtools-1.23"
     },
     "process": {
+      "afterScript": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "closure": ""
+      },
       "cache": true,
       "containerOptions": {
         "1": "--cpu-shares 1024 --cpus $task.cpus",
@@ -165,6 +171,21 @@
         "closure": "finish"
       },
       "executor": "local",
+      "ext": {
+        "capture_logs": true,
+        "commonAfterScript": {
+          "1": "",
+          "2": "",
+          "3": "",
+          "closure": ""
+        },
+        "log_dir": {
+          "1": "ext",
+          "2": "ext",
+          "3": "ext",
+          "closure": "ext"
+        }
+      },
       "maxRetries": "1",
       "memory": "31 GB",
       "withLabel:process_high": {
