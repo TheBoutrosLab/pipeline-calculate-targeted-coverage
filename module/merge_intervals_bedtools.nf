@@ -13,17 +13,11 @@ process run_merge_BEDtools {
         pattern: "*.bed",
         mode: "copy"
 
-    publishDir path: "${params.log_output_dir}/process-log/",
-        pattern: ".command.*",
-        mode: "copy",
-        saveAs: { "${task.process.replace(':', '/')}/log${file(it).getName()}" }
-    
     input: 
         path input_depth_bed
 
     output:
         path "*.bed", emit: bed
-        path ".command.*"
 
     script:
 
