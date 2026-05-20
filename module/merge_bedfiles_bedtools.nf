@@ -14,18 +14,12 @@ process merge_bedfiles_BEDtools {
         mode: "copy",
         enabled: params.save_intermediate_files
 
-    publishDir path: "${params.log_output_dir}/process-log/",
-        pattern: ".command.*",
-        mode: "copy",
-        saveAs: { "${task.process.replace(':', '/')}/log${file(it).getName()}" }
-    
     input: 
         path target_bed
         path off_target_bed
 
     output:
         path "*.bed", emit: bed
-        path ".command.*"
 
     script:
 

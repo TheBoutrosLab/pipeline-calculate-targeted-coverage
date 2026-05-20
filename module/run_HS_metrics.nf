@@ -15,11 +15,6 @@ process run_BedToIntervalList_picard {
         mode: "copy",
         enabled: params.save_intermediate_files
 
-    publishDir path: "${params.log_output_dir}/process-log/", //print log
-        pattern: ".command.*",
-        mode: "copy",
-        saveAs: { "${task.process.replace(':', '/')}/log${file(it).getName()}" }
-
     publishDir path: "${params.workflow_output_dir}/output/", //print out and save generated interval list
         pattern: "*.interval_list",
         mode: "copy",
@@ -32,7 +27,6 @@ process run_BedToIntervalList_picard {
 
     output:
         path "*.interval_list", emit: interval_list
-        path ".command.*"
 
     script:
 
@@ -68,11 +62,6 @@ process run_CollectHsMetrics_picard {
         mode: "copy",
         enabled: true
 
-    publishDir path: "${params.log_output_dir}/process-log/",
-        pattern: ".command.*",
-        mode: "copy",
-        saveAs: { "${task.process.replace(':', '/')}/log${file(it).getName()}" }
-
     input:
         path input_bam
         path target_interval_list, stageAs: 'target_intervals.interval_list'
@@ -80,7 +69,6 @@ process run_CollectHsMetrics_picard {
 
     output:
         path "*.txt", emit: txt
-        path ".command.*"
 
     script:
 

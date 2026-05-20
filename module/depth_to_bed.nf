@@ -19,18 +19,12 @@ process convert_depth_to_bed {
         mode: "copy",
         enabled: (params.save_raw_target_bed && tag == 'target') || (params.save_all_dbSNP && tag == 'genome-wide-dbSNP')
 
-    publishDir path: "${params.log_output_dir}/process-log/",
-        pattern: ".command.*",
-        mode: "copy",
-        saveAs: { "${task.process.replace(':', '/')}/log${file(it).getName()}" }
-    
     input: 
         path input_tsv
         val tag
 
     output:
         path "*.bed", emit: bed
-        path ".command.*"
 
     script:
 

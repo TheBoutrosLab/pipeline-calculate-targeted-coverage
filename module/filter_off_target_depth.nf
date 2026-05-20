@@ -15,17 +15,11 @@ process run_depth_filter {
         mode: "copy",
         enabled: params.save_intermediate_files
 
-    publishDir path: "${params.log_output_dir}/process-log/",
-        pattern: ".command.*",
-        mode: "copy",
-        saveAs: { "${task.process.replace(':', '/')}/log${file(it).getName()}" }
-    
     input: 
         path input
 
     output:
         path "*.bed", emit: bed
-        path ".command.*"
 
     script:
 
@@ -67,11 +61,6 @@ process run_slop_BEDtools {
         mode: "copy",
         enabled: params.save_intermediate_files
 
-    publishDir path: "${params.log_output_dir}/process-log/",
-        pattern: ".command.*",
-        mode: "copy",
-        saveAs: { "${task.process.replace(':', '/')}/log${file(it).getName()}" }
-    
     input: 
         path target_bed
         path genome_sizes
@@ -80,7 +69,6 @@ process run_slop_BEDtools {
 
     output:
         path "*.bed", emit: bed
-        path ".command.*"
 
     script:
 
@@ -119,18 +107,12 @@ process run_intersect_BEDtools {
         pattern: "*.bed",
         mode: "copy"
 
-    publishDir path: "${params.log_output_dir}/process-log/",
-        pattern: ".command.*",
-        mode: "copy",
-        saveAs: { "${task.process.replace(':', '/')}/log${file(it).getName()}" }
-    
     input: 
         path target_bed
         path off_target_bed
 
     output:
         path "*.bed", emit: bed
-        path ".command.*"
 
     script:
 

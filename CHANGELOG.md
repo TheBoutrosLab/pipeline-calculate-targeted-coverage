@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ### Changed
 
 - Update `pipeval_version` from `4.0.0-rc.2` to `5.2.0`
+- Use `methods.setup_process_afterscript()` for process logs
 
 ### Removed
 
