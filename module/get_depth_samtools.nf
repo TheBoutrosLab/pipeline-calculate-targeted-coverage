@@ -14,11 +14,6 @@ process run_depth_SAMtools {
         mode: "copy",
         enabled: params.save_intermediate_files
 
-    publishDir path: "${params.log_output_dir}/process-log/",
-        pattern: ".command.*",
-        mode: "copy",
-        saveAs: { "${task.process.replace(':', '/')}/log${file(it).getName()}" }
-    
     input: 
         path input_BAM
         path input_bed
@@ -26,7 +21,6 @@ process run_depth_SAMtools {
 
     output:
         path "*.tsv", emit: tsv
-        path ".command.*"
 
     script:
     output_filename = generate_standard_filename(
