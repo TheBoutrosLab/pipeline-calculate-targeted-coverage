@@ -81,7 +81,8 @@ workflow {
 
     validate_meta = meta_base.map{ base_m ->
         base_m + [
-            "docker_image": params.docker_image_validate
+            "docker_image": params.docker_image_validate,
+            "log_output_dir": "${base_m.log_output_dir}/process-log"
         ]
     }
 
@@ -89,7 +90,8 @@ workflow {
         base_m + [
             "output_dir": "${base_m.output_dir_base}/output",
             "checksum_alg": "sha512",
-            "docker_image": params.docker_image_validate
+            "docker_image": params.docker_image_validate,
+            "log_output_dir": "${base_m.log_output_dir}/process-log"
         ]
     }
 
