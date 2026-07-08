@@ -277,6 +277,9 @@
       "set_retry": "closure()",
       "setup_retry": "closure()"
     },
+    "singularity": {
+      "enabled": false
+    },
     "timeline": {
       "enabled": true,
       "file": "/tmp/nf-config-test-outputs/calculate-targeted-coverage-VER.SI.ON/TWGSAMIN000001-T002-S02-F/log-calculate-targeted-coverage-VER.SI.ON-19970704T165655Z/nextflow-log/timeline.html"
