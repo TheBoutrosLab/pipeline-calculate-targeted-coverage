@@ -16,6 +16,7 @@
     - [7. Metrics Reporting](#7-metrics-reporting)
   - [Inputs and Configuration](#inputs-and-configuration)
   - [Outputs](#outputs)
+  - [Profiles](#profiles)
   - [Performance Validation](#performance-validation)
   - [References](#references)
   - [Discussions](#discussions)
@@ -113,6 +114,8 @@ A directed acyclic graph of your pipeline.
 | `picard_CollectHsMetrics_extra_args` | no | string | Extra arguments for `picard CollectHsMetrics`. |
 | `merge_operation` | no | string | Operation performed on read depth column values when intervals are collapsed during `bedtools merge`. Defaults to 'collapse'. See [bedtools documentation](https://bedtools.readthedocs.io/en/latest/content/tools/merge.html#:~:text=%2Dc.-,Valid%20operations%3A,-sum%2C%20min%2C%20max) for other options. |
 | `work_dir` | no | path | Path of working directory for Nextflow. When included in the sample config file, Nextflow intermediate files and logs will be saved to this directory. With ucla_cds, the default is `/scratch` and should only be changed for testing/development. Changing this directory to `/hot` or `/tmp` can lead to high server latency and potential disk space limitations, respectively. |
+| `singularity_library` | no | path | Path to readable Singularity library directory containing any existing Singularity images. |
+| `singularity_cache` | no | path | Path to writable Singularity cache directory where images will be cached. |
 
 ---
 
@@ -132,6 +135,16 @@ A directed acyclic graph of your pipeline.
 | `.interval_list` | Intermediate output of target bed file converted to picard's interval list format. (OPTIONAL)  Set `save_interval_list` in config file. |
 | `report.html`, `timeline.html` and `trace.txt` | A Nextflowreport, timeline and trace files |
 | `log.command.*` | Process specific logging files created by nextflow. |
+
+---
+
+## Profiles
+
+Profiles can be selected to control which containerization system will be used. Profile selection can be passed to the nextflow run command using `-profile`. Available profiles:
+
+- `docker` - Use Docker as the containerization system
+- `apptainer` - Use Apptainer as the containerization system
+- `singularity` - Use Singularity as the containerization system
 
 ---
 
