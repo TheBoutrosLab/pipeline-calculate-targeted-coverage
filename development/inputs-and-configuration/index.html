@@ -67,6 +67,10 @@
                 </li>
               </ul>
               <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../profiles/">Profiles</a>
+                </li>
+              </ul>
+              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../performance-validation/">Performance Validation</a>
                 </li>
               </ul>
@@ -102,7 +106,7 @@
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
       <li class="breadcrumb-item active">Inputs and Configuration</li>
     <li class="wy-breadcrumbs-aside">
-          <a href="https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/blob/dd7aa2a50c0d8ae8a582c253fa1869ab55f74ddd/README.md" class="icon icon-github"> Edit on GitHub</a>
+          <a href="https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/blob/ae010fbeccbd941bfe196b83c6574c328d4e12fd/README.md" class="icon icon-github"> Edit on GitHub</a>
     </li>
   </ul>
   <hr/>
@@ -282,6 +286,30 @@
 <td>no</td>
 <td>path</td>
 <td>Path of working directory for Nextflow. When included in the sample config file, Nextflow intermediate files and logs will be saved to this directory. With ucla_cds, the default is <code>/scratch</code> and should only be changed for testing/development. Changing this directory to <code>/hot</code> or <code>/tmp</code> can lead to high server latency and potential disk space limitations, respectively.</td>
+</tr>
+<tr>
+<td><code>apptainer_library</code></td>
+<td>no</td>
+<td>path</td>
+<td>Path to readable Apptainer library directory containing any existing Apptainer images.</td>
+</tr>
+<tr>
+<td><code>apptainer_cache</code></td>
+<td>no</td>
+<td>path</td>
+<td>Path to writable Apptainer cache directory where images will be cached.</td>
+</tr>
+<tr>
+<td><code>singularity_library</code></td>
+<td>no</td>
+<td>path</td>
+<td>Path to readable Singularity library directory containing any existing Singularity images.</td>
+</tr>
+<tr>
+<td><code>singularity_cache</code></td>
+<td>no</td>
+<td>path</td>
+<td>Path to writable Singularity cache directory where images will be cached.</td>
 </tr>
 </tbody>
 </table>
