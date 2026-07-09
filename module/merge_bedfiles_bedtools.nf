@@ -36,7 +36,7 @@ process merge_bedfiles_BEDtools {
     set -euo pipefail
 
     cat ${target_bed} ${off_target_bed} | \
-        sort -k1,1 -k2,2n | \
+        sort -T /tmp -k1,1 -k2,2n | \
         awk '{OFS = "\t"}{print \$1, \$2, \$3}' | \
         bedtools merge \
         > ${output_filename}
