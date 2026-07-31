@@ -192,7 +192,8 @@ pipeline-calculate-targeted-coverage is licensed under the GNU General Public Li
 
 pipeline-calculate-targeted-coverage performs read-depth related calculations on BAMs from targeted sequencing experiments.
 
-Copyright (C) 2022-2024 University of California Los Angeles ("Boutros Lab") All rights reserved.
+Copyright (C) 2022-2025 University of California Los Angeles ("Boutros Lab")
+Copyright (C) 2026 Sanford Burnham Prebys Medical Discovery Institute ("Boutros Lab")
 
 This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 
