@@ -247,4 +247,8 @@ workflow {
             }
         
         generate_sha512sum(checksum_meta.combine(checksum_ch.flatten()))
+    
+    workflow.onComplete = {
+        WorkflowFinalizer.completeWorkflow(workflow, params);
     }
+}
