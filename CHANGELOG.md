@@ -6,6 +6,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [2.3.0] - 2026-08-28
+
+### Changed
+
+- Tar process logs on success
+
 ## [2.2.1] - 2026-07-09
 
 ### Changed
@@ -120,3 +126,4 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 [2.1.0]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.0.0...v2.1.0
 [2.2.0]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.1.0...v2.2.0
 [2.2.1]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.2.0...v2.2.1
+[2.3.0]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.2.1...v2.3.0
