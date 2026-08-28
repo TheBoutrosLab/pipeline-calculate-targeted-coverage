@@ -8,6 +8,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [2.3.0] - 2026-08-28
 
+### Changed
+
+- Tar process logs on success
+
 ## [2.2.1] - 2026-07-09
 
 ### Changed
