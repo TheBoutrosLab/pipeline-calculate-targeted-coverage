@@ -8,6 +8,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [2.3.2] - 2026-10-09
+
 ### Changed
 
 - Update config submodule to fix task property access
@@ -140,4 +142,5 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 [2.2.1]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.2.0...v2.2.1
 [2.3.0]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.2.1...v2.3.0
 [2.3.1]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.3.0...v2.3.1
-[unreleased]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.3.1...HEAD
+[2.3.2]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.3.1...v2.3.2
+[unreleased]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.3.2...HEAD
