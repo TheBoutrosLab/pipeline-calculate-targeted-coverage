@@ -1,7 +1,5 @@
 #!/usr/bin/env nextflow
 
-nextflow.enable.dsl=2
-
 include { run_validate_PipeVal } from './external/pipeline-Nextflow-module/modules/PipeVal/validate/main'
 include { run_depth_SAMtools as run_depth_SAMtools_target; run_depth_SAMtools as run_depth_SAMtools_off_target} from './module/get_depth_samtools'
 include { convert_depth_to_bed as convert_depth_to_bed_off_target } from './module/depth_to_bed'
@@ -71,7 +69,7 @@ log.info """\
 
 workflow {
     Channel
-        .from( params.input.bam )
+        .of( params.input.bam )
         .set { input_ch_bam }
 
     meta_base = Channel.value([
