@@ -39,7 +39,7 @@ This pipeline performs coverage calculations from a BAM file at intervals specif
 3. See the submission script, [here](https://github.com/theboutroslab/tool-submit-nf), to submit your pipeline
 
 ### Requirements
-Currently supported Nextflow versions: `v23.04.2`
+Currently supported Nextflow versions: `25.10.5` (requires Java 17 or later)
 
 ---
 
