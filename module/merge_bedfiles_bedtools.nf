@@ -12,7 +12,8 @@ process merge_bedfiles_BEDtools {
     publishDir path: "${params.workflow_output_dir}/intermediate/${task.process.replace(':','/')}",
         pattern: "*.bed",
         mode: "copy",
-        enabled: params.save_intermediate_files
+        enabled: params.save_intermediate_files,
+        failOnError: false
 
     input: 
         path target_bed

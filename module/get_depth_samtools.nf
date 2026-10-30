@@ -12,7 +12,8 @@ process run_depth_SAMtools {
     publishDir path: "${params.workflow_output_dir}/intermediate/${task.process.replace(':','/')}",
         pattern: "*.tsv",
         mode: "copy",
-        enabled: params.save_intermediate_files
+        enabled: params.save_intermediate_files,
+        failOnError: false
 
     input: 
         path input_BAM

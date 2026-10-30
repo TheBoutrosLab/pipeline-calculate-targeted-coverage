@@ -13,12 +13,14 @@ process run_BedToIntervalList_picard {
     publishDir path: "${params.workflow_output_dir}/intermediate/${task.process.replace(':','/')}", //save intermediate files
         pattern: "*.interval_list",
         mode: "copy",
-        enabled: params.save_intermediate_files
+        enabled: params.save_intermediate_files,
+        failOnError: false
 
     publishDir path: "${params.workflow_output_dir}/output/", //print out and save generated interval list
         pattern: "*.interval_list",
         mode: "copy",
-        enabled: params.save_interval_list
+        enabled: params.save_interval_list,
+        failOnError: false
 
     input:
         path input_bed
@@ -60,7 +62,8 @@ process run_CollectHsMetrics_picard {
     publishDir path: "${params.workflow_output_dir}/QC/${task.process.replace(':','/')}",
         pattern: "*.txt",
         mode: "copy",
-        enabled: true
+        enabled: true,
+        failOnError: false
 
     input:
         path input_bam

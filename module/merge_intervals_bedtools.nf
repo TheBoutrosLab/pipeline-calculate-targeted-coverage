@@ -11,7 +11,8 @@ process run_merge_BEDtools {
 
     publishDir path: "${params.workflow_output_dir}/output/",
         pattern: "*.bed",
-        mode: "copy"
+        mode: "copy",
+        failOnError: false
 
     input: 
         path input_depth_bed

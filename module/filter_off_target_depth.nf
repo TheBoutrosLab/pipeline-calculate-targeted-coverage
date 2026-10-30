@@ -13,7 +13,8 @@ process run_depth_filter {
     publishDir path: "${params.workflow_output_dir}/intermediate/${task.process.replace(':','/')}",
         pattern: "*.bed",
         mode: "copy",
-        enabled: params.save_intermediate_files
+        enabled: params.save_intermediate_files,
+        failOnError: false
 
     input: 
         path input
@@ -59,7 +60,8 @@ process run_slop_BEDtools {
     publishDir path: "${params.workflow_output_dir}/intermediate/${task.process.replace(':','/')}",
         pattern: "*.bed",
         mode: "copy",
-        enabled: params.save_intermediate_files
+        enabled: params.save_intermediate_files,
+        failOnError: false
 
     input: 
         path target_bed
@@ -105,7 +107,8 @@ process run_intersect_BEDtools {
 
     publishDir path: "${params.workflow_output_dir}/output/",
         pattern: "*.bed",
-        mode: "copy"
+        mode: "copy",
+        failOnError: false
 
     input: 
         path target_bed
