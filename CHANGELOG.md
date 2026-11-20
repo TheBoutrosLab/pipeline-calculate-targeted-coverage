@@ -8,6 +8,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
+## [3.1.0] - 2026-11-20
+
 ### Changed
 
 - Disable `ociAutoPull` when library or cache dir is given
@@ -154,4 +156,5 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 [2.3.1]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.3.0...v2.3.1
 [2.3.2]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.3.1...v2.3.2
 [3.0.0]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v2.3.2...v3.0.0
-[unreleased]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v3.0.0...HEAD
+[3.1.0]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v3.0.0...v3.1.0
+[unreleased]: https://github.com/TheBoutrosLab/pipeline-calculate-targeted-coverage/compare/v3.1.0...HEAD
